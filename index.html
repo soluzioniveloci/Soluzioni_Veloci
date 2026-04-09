@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluzioni Veloci — Siti Web, App e Marketing a Napoli</title>
+  <meta name="description" content="Soluzioni Veloci realizza siti web, e-commerce, app e strategie digitali a Napoli. Contattaci su WhatsApp per una consulenza." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --bg2:#121932;
+      --card:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.12);
+      --text:#eef3ff;
+      --muted:#b9c3e4;
+      --primary:#5eead4;
+      --primary2:#22c55e;
+      --accent:#60a5fa;
+      --danger:#f59e0b;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:24px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(94,234,212,.12), transparent 25%),
+        linear-gradient(180deg,#09101d 0%,#0c1223 35%,#0b1020 100%);
+      line-height:1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(calc(100% - 32px),var(--max));margin:0 auto}
+    .topbar{
+      background:linear-gradient(90deg,#10b981,#22c55e);
+      color:#052e16;
+      padding:10px 0;
+      font-weight:700;
+      text-align:center;
+      font-size:.95rem;
+    }
+    .topbar span{opacity:.9}
+    header{
+      position:sticky;top:0;z-index:1000;
+      backdrop-filter:blur(14px);
+      background:rgba(8,12,25,.72);
+      border-bottom:1px solid rgba(255,255,255,.07);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:20px;padding:16px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px;
+    }
+    .logo{
+      width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      color:#07121d;font-weight:900;box-shadow:var(--shadow);
+    }
+    .navlinks{display:flex;gap:20px;flex-wrap:wrap}
+    .navlinks a{color:var(--muted);font-weight:600}
+    .navlinks a:hover{color:#fff}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 22px;border-radius:16px;border:1px solid transparent;
+      font-weight:800;transition:.28s ease;cursor:pointer;position:relative;overflow:hidden;
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary2));color:#052e16;box-shadow:var(--shadow)}
+    .btn-primary:hover,.btn-primary:focus-visible{
+      transform:translateY(-2px);
+      box-shadow:0 0 0 1px rgba(94,234,212,.35),0 0 18px rgba(94,234,212,.32),0 0 42px rgba(34,197,94,.22),var(--shadow);
+    }
+    .btn-outline{border-color:var(--stroke);background:rgba(255,255,255,.03);color:#fff}
+    .btn-outline:hover,.btn-outline:focus-visible{
+      background:rgba(255,255,255,.07);
+      box-shadow:0 0 0 1px rgba(96,165,250,.28),0 0 18px rgba(96,165,250,.20),0 0 40px rgba(94,234,212,.14);
+    }
+
+    section{padding:92px 0}
+    .hero{padding:92px 0 70px;overflow:hidden}
+    .hero-grid{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:10px 14px;border:1px solid var(--stroke);border-radius:999px;
+      background:rgba(255,255,255,.04);color:var(--muted);font-weight:700;font-size:.93rem;
+    }
+    h1,h2,h3,h4,p{margin:0}
+    h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.02;margin:18px 0 18px;letter-spacing:-.04em}
+    h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.06;margin-bottom:14px;letter-spacing:-.03em}
+    .lead{font-size:1.15rem;color:var(--muted);max-width:700px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+    .stats{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;
+    }
+    .stat{
+      padding:18px;border:1px solid var(--stroke);border-radius:20px;background:var(--card)
+    }
+    .stat strong{display:block;font-size:1.7rem}
+    .stat span{color:var(--muted)}
+    .visual{
+      position:relative;min-height:620px;
+    }
+    .orb,.panel,.float{position:absolute;border-radius:28px}
+    .orb{filter:blur(10px);opacity:.75}
+    .orb.one{width:220px;height:220px;background:rgba(34,197,94,.18);top:12px;right:8px}
+    .orb.two{width:180px;height:180px;background:rgba(96,165,250,.18);bottom:40px;left:30px}
+    .panel{
+      inset:40px 20px 20px 40px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.04));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .screen-top{display:flex;align-items:center;gap:8px;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .dot{width:10px;height:10px;border-radius:50%}
+    .dot.r{background:#fb7185}.dot.y{background:#fbbf24}.dot.g{background:#4ade80}
+    .panel-inner{padding:24px}
+    .mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .mini-card{padding:18px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.04);border-radius:22px;min-height:128px;transition:.28s ease;box-shadow:0 0 0 rgba(0,0,0,0)}
+    .mini-card h4{font-size:1.05rem;margin-bottom:10px}
+    .mini-card p{color:var(--muted);font-size:.96rem}
+    .float{
+      background:#07111d;border:1px solid var(--stroke);padding:16px 18px;box-shadow:var(--shadow)
+    }
+    .float.top{top:0;left:0;max-width:240px}
+    .float.bottom{right:0;bottom:0;max-width:260px}
+    .float b{display:block;margin-bottom:6px}
+    .float span{color:var(--muted);font-size:.95rem}
+
+    .section-head{max-width:760px;margin:0 auto 46px;text-align:center}
+    .section-head p{color:var(--muted);font-size:1.08rem}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .card{
+      background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);
+      padding:24px;box-shadow:var(--shadow);transition:.3s ease;position:relative
+    }
+    .icon{
+      width:54px;height:54px;border-radius:18px;display:grid;place-items:center;
+      background:linear-gradient(135deg,rgba(94,234,212,.18),rgba(96,165,250,.22));
+      font-size:1.3rem;margin-bottom:14px
+    }
+    .card h3{font-size:1.18rem;margin-bottom:8px}
+    .card p{color:var(--muted)}
+    .bullets{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+    .bullets li{color:var(--muted);padding-left:24px;position:relative}
+    .bullets li::before{content:"✓";position:absolute;left:0;top:0;color:var(--primary);font-weight:900}
+
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+    .about-visual{
+      min-height:520px;border-radius:30px;border:1px solid var(--stroke);background:
+      radial-gradient(circle at 20% 25%, rgba(34,197,94,.22), transparent 22%),
+      radial-gradient(circle at 78% 18%, rgba(96,165,250,.22), transparent 18%),
+      linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      position:relative;overflow:hidden;box-shadow:var(--shadow)
+    }
+    .about-badge{
+      position:absolute;padding:14px 16px;border-radius:18px;border:1px solid var(--stroke);
+      background:rgba(8,12,25,.72);backdrop-filter:blur(8px)
+    }
+    .about-badge.one{top:24px;left:24px}.about-badge.two{bottom:24px;right:24px}
+    .about-badge strong{display:block;font-size:1.35rem}
+    .about-badge span{color:var(--muted)}
+    .about-center{
+      position:absolute;inset:0;display:grid;place-items:center;padding:32px;text-align:center
+    }
+    .about-center .circle{
+      width:min(78%,340px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(94,234,212,.16), rgba(96,165,250,.18));
+      border:1px solid rgba(255,255,255,.12)
+    }
+    .about-center .circle div{font-size:1.15rem;font-weight:800;padding:24px}
+
+    .results{position:relative}
+    .results-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .result-big{padding:30px}
+    .metric{font-size:clamp(2rem,5vw,4rem);font-weight:900;line-height:1}
+    .quote{font-size:1.05rem;color:#dbe7ff;border-left:3px solid var(--primary);padding-left:16px;margin-top:22px}
+
+    .process{counter-reset:step}
+    .step{position:relative;padding-top:72px}
+    .step::before{
+      counter-increment:step;content:counter(step, decimal-leading-zero);
+      position:absolute;top:20px;left:24px;font-size:2rem;font-weight:900;color:rgba(255,255,255,.14)
+    }
+
+    .cta-box{
+      padding:36px;border-radius:32px;border:1px solid var(--stroke);
+      background:linear-gradient(135deg,rgba(94,234,212,.10),rgba(96,165,250,.08));
+      box-shadow:var(--shadow)
+    }
+    .cta-grid{display:grid;grid-template-columns:1fr .95fr;gap:24px;align-items:start}
+    .contact-list{display:grid;gap:14px;margin-top:20px}
+    .contact-item{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
+    .contact-item small{display:block;color:var(--muted);font-size:.92rem}
+
+    form{display:grid;gap:14px}
+    input,textarea{
+      width:100%;padding:15px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.1);
+      background:rgba(7,17,29,.72);color:#fff;font:inherit;outline:none
+    }
+    textarea{min-height:150px;resize:vertical}
+    input::placeholder,textarea::placeholder{color:#9db0da}
+    .consent{font-size:.9rem;color:var(--muted)}
+    footer{padding:36px 0 44px;border-top:1px solid rgba(255,255,255,.08);color:var(--muted)}
+    .footer-grid{display:grid;grid-template-columns:1.1fr .8fr .8fr;gap:22px}
+    .footer-title{font-size:1rem;font-weight:800;color:#fff;margin-bottom:10px}
+    .stat,.float,.panel,.contact-item,.about-badge,.eyebrow,input,textarea{transition:.28s ease}
+    .card:hover,.card:focus-within,
+    .mini-card:hover,.mini-card:focus-within,
+    .stat:hover,
+    .float:hover,
+    .contact-item:hover,
+    .about-badge:hover{
+      transform:translateY(-4px);
+      border-color:rgba(94,234,212,.4);
+      box-shadow:0 0 0 1px rgba(94,234,212,.18),0 0 22px rgba(94,234,212,.14),0 0 48px rgba(96,165,250,.10),var(--shadow);
+    }
+    .panel:hover{
+      border-color:rgba(96,165,250,.34);
+      box-shadow:0 0 0 1px rgba(96,165,250,.16),0 0 28px rgba(96,165,250,.14),0 0 60px rgba(94,234,212,.08),var(--shadow);
+    }
+    input:focus,textarea:focus{
+      border-color:rgba(94,234,212,.5);
+      box-shadow:0 0 0 1px rgba(94,234,212,.24),0 0 18px rgba(94,234,212,.14);
+    }
+    @media (hover: none){
+      .btn:active,.card:active,.mini-card:active,.stat:active,.float:active,.contact-item:active{
+        transform:scale(.99);
+        box-shadow:0 0 0 1px rgba(94,234,212,.18),0 0 22px rgba(94,234,212,.14),0 0 48px rgba(96,165,250,.10),var(--shadow);
+      }
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid,.about-grid,.results-wrap,.cta-grid{grid-template-columns:1fr}
+      .visual{min-height:540px}
+    }
+    @media (max-width: 860px){
+      .grid-3,.grid-2,.stats,.footer-grid{grid-template-columns:1fr}
+      .nav{align-items:flex-start;flex-direction:column}
+      .navlinks{gap:12px}
+      .hero{padding-top:64px}
+      .visual{min-height:480px}
+      .panel{inset:22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar"><span>Consulenza gratuita — rispondiamo su WhatsApp in tempi rapidi</span></div>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <div class="logo">SV</div>
+        <div>
+          <div>SOLUZIONI VELOCI</div>
+          <small style="color:var(--muted);font-weight:600">Napoli, Italia</small>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a href="#servizi">Servizi</a>
+        <a href="#risultati">Risultati</a>
+        <a href="#perche">Perché Noi</a>
+        <a href="#processo">Come Funziona</a>
+        <a href="#contatti">Contatti</a>
+        <a href="#chisiamo">Chi Siamo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">⚡ Agenzia digitale — Napoli, Italia</div>
+          <h1>Portiamo clienti reali alla tua attività</h1>
+          <p class="lead">Soluzioni Veloci realizza <strong>siti web</strong>, <strong>e-commerce</strong>, <strong>applicazioni</strong>, <strong>gestione social</strong> e strategie digitali che trasformano visite in contatti e clienti veri. Non vendiamo solo presenza online: costruiamo strumenti concreti per far crescere il tuo business.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/393471250632?text=Ciao%20Soluzioni%20Veloci%2C%20vorrei%20maggiori%20informazioni">Scrivici su WhatsApp</a>
+            <a class="btn btn-outline" href="#contatti">Richiedi Consulenza</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>100+</strong><span>Progetti e supporti gestiti</span></div>
+            <div class="stat"><strong>3x</strong><span>Potenziale crescita della visibilità</span></div>
+            <div class="stat"><strong>48h</strong><span>Tempi rapidi per avvio operativo</span></div>
+          </div>
+        </div>
+
+        <div class="visual" aria-hidden="true">
+          <div class="orb one"></div>
+          <div class="orb two"></div>
+          <div class="panel">
+            <div class="screen-top">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+            </div>
+            <div class="panel-inner">
+              <div style="margin-bottom:18px">
+                <div style="font-size:1.75rem;font-weight:900">SOLUZIONI VELOCI</div>
+              </div>
+              <div class="mini-grid">
+                <div class="mini-card"><h4>🌐 Siti Web</h4><p>Siti professionali veloci, moderni e pensati per convertire.</p></div>
+                <div class="mini-card"><h4>🛒 E-commerce</h4><p>Shop online completi con pagamenti, catalogo e gestione ordini.</p></div>
+                <div class="mini-card"><h4>📱 Social & Ads</h4><p>Contenuti, sponsorizzate e strategie per aumentare visibilità e clienti.</p></div>
+                <div class="mini-card"><h4>🤖 Automazioni</h4><p>WhatsApp, moduli, assistenza e processi più rapidi per il tuo business.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="float bottom">
+            <b>WhatsApp diretto</b>
+            <span>Click-to-chat già pronto: <strong>347 125 0632</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chisiamo">
+      <div class="container about-grid">
+        <div>
+          <div class="eyebrow">Chi siamo</div>
+          <h2>Ciao, siamo Giuseppe ed Enzo</h2>
+          <p class="lead" style="margin-bottom:16px">Giuseppe ed Enzo, fondatori di Soluzioni Veloci, aiutano attività, professionisti e aziende a costruire una presenza online moderna, credibile e orientata ai risultati.</p>
+          <p style="color:var(--muted);margin-bottom:14px">Non siamo la classica realtà che consegna un sito e sparisce. Crediamo nei risultati concreti, nel contatto diretto e nelle soluzioni pensate davvero per il business del cliente. Analizziamo l'attività, studiamo gli obiettivi e costruiamo strumenti digitali che aiutano a trovare nuovi clienti e a comunicare meglio online.</p>
+          <p style="color:var(--muted);margin-bottom:14px">Abbiamo scelto questo approccio perché troppe aziende investono in marketing senza avere ritorni reali. Noi preferiamo lavorare in modo chiaro: siti web professionali, social ben gestiti, sistemi di contatto semplici e una strategia concreta che valorizzi davvero l'attività.</p>
+          <ul class="bullets">
+            <li>Relazione diretta con chi segue il progetto</li>
+            <li>Siti, app e contenuti costruiti su misura</li>
+            <li>Focus su contatti, richieste e crescita reale</li>
+            <li>Supporto continuo e comunicazione rapida su WhatsApp</li>
+          </ul>
+          <div class="hero-actions" style="margin-top:24px">
+            <a class="btn btn-primary" href="https://wa.me/393471250632?text=Ciao%20Giuseppe%20ed%20Enzo%2C%20vorrei%20una%20consulenza">Parliamo su WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="about-badge one"><strong>Napoli</strong><span>Operativi in città e in tutta Italia</span></div>
+          <div class="about-center">
+            <div class="circle"><div>GIUSEPPE & ENZO<br><span style="font-size:.95rem;color:var(--muted);font-weight:700">Fondatori di Soluzioni Veloci</span></div></div>
+          </div>
+          <div class="about-badge two"><strong>Supporto rapido</strong><span>WhatsApp, email e consulenza dedicata</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servizi">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">I nostri servizi</div>
+          <h2>Cosa facciamo</h2>
+          <p>Strategie complete per portare visibilità, contatti e clienti reali alla tua attività.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><div class="icon">🌐</div><h3>Creazione Siti Web</h3><p>Siti moderni, veloci e professionali, progettati per convertire visitatori in clienti.</p></article>
+          <article class="card"><div class="icon">🛒</div><h3>E-commerce</h3><p>Negozi online completi per vendere prodotti con catalogo, carrello e pagamenti integrati.</p></article>
+          <article class="card"><div class="icon">📲</div><h3>Landing Page</h3><p>Pagine studiate per acquisire contatti, richieste di preventivo e appuntamenti.</p></article>
+          <article class="card"><div class="icon">📢</div><h3>Gestione Social</h3><p>Contenuti, organizzazione editoriale e presenza professionale su Instagram, TikTok e altri canali.</p></article>
+          <article class="card"><div class="icon">🎯</div><h3>Pubblicità (Ads)</h3><p>Campagne su Meta e Google per portare traffico reale, richieste e vendite misurabili.</p></article>
+          <article class="card"><div class="icon">📍</div><h3>Ottimizzazione Google</h3><p>Miglioriamo la presenza su Google e Google Maps per farti trovare più facilmente dai clienti locali.</p></article>
+          <article class="card"><div class="icon">💬</div><h3>Integrazione WhatsApp</h3><p>Pulsanti, chat dirette e sistemi di contatto immediati per semplificare le richieste dei clienti.</p></article>
+          <article class="card"><div class="icon">🤖</div><h3>Automazioni & AI</h3><p>Processi più rapidi per assistere i clienti, risparmiare tempo e migliorare la gestione.</p></article>
+          <article class="card"><div class="icon">🧩</div><h3>Soluzioni Business</h3><p>Strumenti digitali su misura per aumentare organizzazione, credibilità e fatturato.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="risultati">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Risultati reali</div>
+          <h2>Risultati reali, non promesse</h2>
+          <p>Aiutiamo aziende e professionisti a ottenere più visibilità, più richieste e più opportunità di vendita.</p>
+        </div>
+        <div class="results-wrap">
+          <div class="card result-big">
+            <div class="metric">55+</div>
+            <h3 style="margin:12px 0 6px">Clienti e collaborazioni gestite</h3>
+            <p>Supportiamo attività locali e progetti digitali con strumenti concreti e strategie su misura.</p>
+            <div class="quote">“Aiutiamo le aziende a ottenere più clienti, più richieste e una presenza online più forte.”</div>
+          </div>
+          <div class="grid-2">
+            <div class="card"><div class="metric">102%</div><h3 style="margin:10px 0 6px">Aumento della visibilità</h3><p>Crescita media potenziale con sito, social e ottimizzazione ben strutturati.</p></div>
+            <div class="card"><div class="metric">1x+</div><h3 style="margin:10px 0 6px">Crescita del business</h3><p>Ogni progetto nasce per trasformare traffico e contatti in risultati concreti.</p></div>
+            <div class="card"><div class="metric">15h</div><h3 style="margin:10px 0 6px">Primi segnali operativi</h3><p>Quando il progetto parte bene, i primi miglioramenti si vedono in tempi rapidi.</p></div>
+            <div class="card"><div class="metric">100%</div><h3 style="margin:10px 0 6px">Focus sui risultati</h3><p>Ogni scelta è orientata a migliorare contatti, immagine e performance.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="perche">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Perché noi</div>
+          <h2>Perché scegliere Soluzioni Veloci</h2>
+          <p>Non siamo il solito fornitore. Vogliamo essere un partner concreto per la crescita della tua attività.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card"><div class="icon">🚀</div><h3>Non vendiamo solo siti, costruiamo risultati</h3><p>Il nostro obiettivo non è consegnarti una semplice vetrina online, ma uno strumento utile per acquisire clienti e richieste reali.</p></article>
+          <article class="card"><div class="icon">🤝</div><h3>Relazione diretta</h3><p>Parli direttamente con chi lavora al progetto. Più chiarezza, più rapidità, meno passaggi inutili.</p></article>
+          <article class="card"><div class="icon">🧠</div><h3>Strategie semplici ma efficaci</h3><p>Niente complicazioni inutili: solo soluzioni chiare, misurabili e costruite sulle esigenze reali del tuo business.</p></article>
+          <article class="card"><div class="icon">📈</div><h3>Focus sui risultati reali</h3><p>Visibilità, contatti, richieste e immagine del brand: lavoriamo su ciò che conta davvero per far crescere l'attività.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="processo">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Il processo</div>
+          <h2>Come funziona</h2>
+          <p>Tre passi semplici per iniziare a costruire una presenza online professionale e ottenere risultati.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card step"><h3>Analizziamo la tua attività</h3><p>Studiamo il tuo business, il tuo pubblico e i tuoi obiettivi per definire la strategia migliore.</p></article>
+          <article class="card step"><h3>Creiamo sito, contenuti e strategia</h3><p>Realizziamo il progetto, curiamo la comunicazione e costruiamo gli strumenti digitali più adatti a te.</p></article>
+          <article class="card step"><h3>Ti aiutiamo a portare clienti reali</h3><p>Ottimizziamo tutto per generare più contatti, maggiore visibilità e una presenza online più autorevole.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti">
+      <div class="container cta-box">
+        <div class="cta-grid">
+          <div>
+            <div class="eyebrow">Inizia ora</div>
+            <h2>Vuoi più clienti?</h2>
+            <p class="lead">Scrivici ora e analizziamo la tua attività. Nessun impegno, solo una consulenza chiara per capire come possiamo aiutarti.</p>
+            <div class="contact-list">
+              <div class="contact-item">
+                <div class="icon" style="margin:0;width:46px;height:46px;border-radius:14px">💬</div>
+                <div><strong>WhatsApp</strong><small><a href="https://wa.me/393471250632">+39 347 125 0632</a></small></div>
+              </div>
+              <div class="contact-item">
+                <div class="icon" style="margin:0;width:46px;height:46px;border-radius:14px">✉️</div>
+                <div><strong>Email</strong><small><a href="mailto:soluzioniveloci.info@gmail.com">soluzioniveloci.info@gmail.com</a></small></div>
+              </div>
+              <div class="contact-item">
+                <div class="icon" style="margin:0;width:46px;height:46px;border-radius:14px">📍</div>
+                <div><strong>Sede operativa</strong><small>Napoli, Italia</small></div>
+              </div>
+              <div class="contact-item">
+                <div class="icon" style="margin:0;width:46px;height:46px;border-radius:14px">🕒</div>
+                <div><strong>Disponibilità</strong><small>Lun–Sab · 9:00–19:00</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="margin-bottom:14px">Richiedi consulenza gratuita</h3>
+            <form action="mailto:soluzioniveloci.info@gmail.com" method="post" enctype="text/plain">
+              <input type="text" name="nome" placeholder="Nome e Cognome" required>
+              <input type="text" name="attivita" placeholder="Tipo di Attività">
+              <input type="email" name="email" placeholder="Email" required>
+              <input type="text" name="telefono" placeholder="Telefono / WhatsApp">
+              <textarea name="messaggio" placeholder="Raccontaci il tuo progetto"></textarea>
+              <div class="consent">Accetto la Privacy Policy e il trattamento dei dati personali ai sensi del GDPR.</div>
+              <button class="btn btn-primary" type="submit">Invia Richiesta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">SOLUZIONI VELOCI</div>
+        <p>Realizziamo siti web, e-commerce, applicazioni e strategie digitali per attività, professionisti e aziende che vogliono crescere online con strumenti concreti.</p>
+      </div>
+      <div>
+        <div class="footer-title">Link rapidi</div>
+        <p><a href="#servizi">Servizi</a><br><a href="#risultati">Risultati</a><br><a href="#perche">Perché Noi</a><br><a href="#processo">Come Funziona</a><br><a href="#contatti">Contatti</a></p>
+      </div>
+      <div>
+        <div class="footer-title">Contatti</div>
+        <p><a href="https://wa.me/393471250632">+39 347 125 0632</a><br><a href="mailto:soluzioniveloci.info@gmail.com">soluzioniveloci.info@gmail.com</a><br>Napoli, Italia</p>
+      </div>
+    </div>
+    <div class="container" style="margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)">© 2026 Soluzioni Veloci — Tutti i diritti riservati</div>
+  </footer>
+</body>
+</html>
